@@ -2,7 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-require('ejs');
+require('ejs'); //ejs depencies
 const path = require('path');
 const http = require('http'); // pour créer le serveur HTTP
 const socketIo = require('socket.io'); // pour Socket.IO
