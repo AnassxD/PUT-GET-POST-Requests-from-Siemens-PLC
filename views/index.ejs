@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Affichage des données en temps réel</title>
+</head>
+
+<body>
+    <h1>Données collectées</h1>
+
+    <ul id="resourceList">
+        <% resources.forEach(function(resource) { %>
+            <li>
+                <%= resource.id %> : <%= resource.name %>
+            </li>
+            <% }); %>
+    </ul>
+
+    <!-- Afficher les nouvelles données en temps réel -->
+    <h2>Nouvelles données en temps réel :</h2>
+    <ul id="newDataList"></ul>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        // Connexion à Socket.IO
+        var socket = io();
+
+        // Quand de nouvelles données arrivent, les afficher dans la liste
+        socket.on('newData', function (resource) {
+            var newDataList = document.getElementById('newDataList');
+            var li = document.createElement('li');
+            li.textContent = resource.id + " : " + resource.name; // Changement ici
+            newDataList.appendChild(li);
+        });
+    </script>
+
+</body>
+
+</html>
