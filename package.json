@@ -8,5 +8,23 @@
     "multer": "^1.4.5-lts.1",
     "mysql2": "^3.11.3",
     "socket.io": "^4.6.2"
+  },
+
+  "pkg": {
+    "assets": [
+      "views/**/*.ejs",  
+      "public/**/*"  
+    ]
+  },
+
+  "name": "App",
+  "version": "1.0.0",
+  "main": "testapi.js",
+  "scripts": {},
+  "pkg": {
+    "assets": [
+      "views/**/*.ejs", 
+      "public/**/*" 
+    ]
   }
 }

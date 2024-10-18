@@ -1,0 +1,37 @@
+<div id="data"></div>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+
+var socket = io('http://localhost:55555', {
+
+});
+
+
+    socket.on('/receiver', (msg) => {
+
+        var data = document.getElementById("data");
+
+        data.innerHTML = msg;
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

@@ -2,6 +2,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+require('ejs');
 const path = require('path');
 const http = require('http'); // pour créer le serveur HTTP
 const socketIo = require('socket.io'); // pour Socket.IO
@@ -13,7 +14,8 @@ const io = socketIo(server); // Ajouter Socket.IO
 
 // Configurer le moteur de template EJS
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views')); // Dossier contenant les fichiers EJS
+// app.set('views', path.join(__dirname, 'views')); 
+app.set('views', path.join(process.cwd(), 'views'));  // Dossier contenant les fichiers EJS
 
 // Middleware
 app.use(cors());
